@@ -4,6 +4,7 @@
 #include <bits/stdc++.h>
 #include "file.h"
 #include "BST.h"
+#include "AVL.h"
 using namespace std;
 
 int getUserChoice(int minChoice, int maxChoice) {
@@ -86,6 +87,60 @@ void BSTMenu()
 
 void AVLMenu()
 {
+  vector<Student> students;
+  readStudentsDataFromFile("StudentsFile.txt", students);
+  AVL AVLtree;
+  for (int i = 0; i < students.size(); i++)
+  {
+    AVLtree.insert_value(students[i].getId(), students[i]);
+  }
+
+  int choice;
+
+  do {
+    cout << "##=============================================================================================##" << endl;
+    cout << "\t\t\tStudent Store App With AVL\t\t\t" << endl;
+    cout << endl;
+    cout << "Choose one of the following options:" << endl;
+    cout << "1. Add student" << endl;
+    cout << "2. Remove student" << endl;
+    cout << "3. Search student" << endl;
+    cout << "4. Print All (sorted by id)" << endl;
+    cout << "5. Show Departments Report" << endl;
+    cout << "6. Return to main menu" << endl;
+    cout << "##=============================================================================================##" << endl;
+    choice = getUserChoice(1, 6);
+
+    if (choice == 1)
+    {
+      Student student(0, " ", 0.0, " ");
+      cout << "Enter Student Data As Follow : (ID) (Name) (GPA) (Department)" << endl;
+      cin >> student;
+      AVLtree.insert_value(student.getId(), student);
+      cout << "Student Added Successfully !" << endl;
+    }
+    else if (choice == 2)
+    {
+      int id;
+      cout << "Enter Student ID That You Want to Remove It : " << endl;
+      cin >> id;
+      AVLtree.delete_value(id);
+      cout << "Student Removed Successfully !" << endl;
+    }
+    else if(choice == 3){
+      int id ;
+      cout << "id: ";
+      cin >> id;
+      AVLtree.search(id);
+    }
+    else if (choice == 4){
+      AVLtree.print_inorder();
+    }
+    else if(choice == 5)
+      AVLtree.departmentreprot();
+    else if(choice == 6)
+      break;
+  }while(true);
 
 }
 

@@ -93,6 +93,7 @@ ostream& operator<<(ostream &out, Student& student) {
     out << "Name: " << student.getName() << endl;
     out << "GPA: " << student.getGpa() << endl;
     out << "Department: " << student.getDepartment() << endl;
+    out << "===========================================================\n";
     return out;
 }
 

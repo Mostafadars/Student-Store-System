@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.22.3)
 project(DSA3)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -10,4 +10,4 @@ add_executable(DSA3
         Student.h
         BST.h
         Menus.h
-        file.h)
+        file.h AVL.h)

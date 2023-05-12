@@ -7,5 +7,9 @@ using namespace std;
 
 int main()
 {
-    MainMenu();
+//  Student st(1,"oppad" , 3.9, "cs");
+//  AVL tre;
+//  tre.insert_value(1,st);
+//  tre.print_inorder();
+   MainMenu();
 }
