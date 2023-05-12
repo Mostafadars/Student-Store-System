@@ -22,13 +22,6 @@ class AVL {
       BinaryNode(int id , Student student) : ID(id){
         info = new Student(student.getId(),student.getName(),student.getGpa(),student.getDepartment());
       }
-      BinaryNode* search_for(int val){
-        if(val == ID)
-          return this;
-        if(val < ID)
-          return left->search_for(val);
-        return right->search_for(val);
-      }
   };
 
   BinaryNode *root { };
@@ -84,11 +77,6 @@ class AVL {
     update_height(node);
   }
 
-  BinaryNode* max_node(BinaryNode* cur){
-    while(cur && cur->right)
-      cur = cur->right;
-    return cur;
-  }
 
   BinaryNode* min_node(BinaryNode* cur) {
     while (cur && cur->left)
@@ -132,16 +120,6 @@ class AVL {
     return node;
   }
 
-  bool is_bst(BinaryNode* node) {
-    bool left_bst = !node->left || node->ID > node->left->ID && is_bst(node->left);
-
-    if (!left_bst)
-      return false;
-
-    bool right_bst = !node->right || node->ID < node->right->ID && is_bst(node->right);
-    return right_bst;
-  }
-
   void print_inorder(BinaryNode* node) {
     if(!node)
       return;
@@ -152,43 +130,6 @@ class AVL {
   }
 
 
-  pair<bool,int> lower_bound(int val , BinaryNode* node){
-    if(search(val,node))
-      return make_pair(true,val);
-    BinaryNode* cur = node;
-    if(cur->ID > val){
-      BinaryNode* temp = min_node(cur->left);
-      if(temp->ID < val)
-        return make_pair(false,0);
-      return make_pair(true,temp->ID);
-    }
-    if(cur->ID < val){
-      if(cur->right->ID > val)
-        return make_pair(true,cur->right->ID);
-      return lower_bound(val,node->right);
-    }
-    return make_pair(false,0);
-  }
-
-
-  pair<bool,int> upper_bound(int val , BinaryNode* node){
-    if(!node)
-      return make_pair(false,0);
-    BinaryNode* cur = node;
-    if(cur->ID > val){
-      BinaryNode* temp = max_node(cur->left);
-      if(temp->ID < val)
-        return make_pair(true,cur->ID);
-      return upper_bound(val,node->left);
-    }
-    if(cur->ID <= val){
-      BinaryNode* temp = min_node(cur->right);
-      if(temp->ID > val)
-        return make_pair(true,temp->ID);
-      return upper_bound(val,node->right);
-    }
-    return make_pair(false,0);
-  }
 
 
   int ch_height(BinaryNode* node){
@@ -271,45 +212,6 @@ class AVL {
     print_inorder(root);
   }
 
-  pair<bool , int> lower_bound(int val){
-    if(!this)
-      return make_pair(false, 0);
-    return lower_bound(val,root);
-  }
-
-  pair<bool , int> upper_bound(int val){
-    if(!this)
-      return make_pair(false, 0);
-    return upper_bound(val,root);
-  }
-
-  void level_order_traversal() {
-    if (!root)
-      return;
-
-    cout << "******************\n";
-    queue<BinaryNode*> nodes_queue;
-    nodes_queue.push(root);
-
-    int level = 0;
-    while (!nodes_queue.empty()) {
-      int sz = nodes_queue.size();
-
-      cout << "Level " << level << ": ";
-      while (sz--) {
-        BinaryNode*cur = nodes_queue.front();
-        nodes_queue.pop();
-
-        cout << cur->ID << " ";
-        if (cur->left)
-          nodes_queue.push(cur->left);
-        if (cur->right)
-          nodes_queue.push(cur->right);
-      }
-      level++;
-      cout << "\n";
-    }
-  }
   void departmentreprot(){
     report_departments(root);
   }
