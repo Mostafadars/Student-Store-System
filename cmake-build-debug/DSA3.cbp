@@ -93,6 +93,9 @@
 		<Unit filename="E:/Projects/Git_Hub/Data_Structures_Ass_3/Menus.h">
 			<Option target="DSA3"/>
 		</Unit>
+		<Unit filename="E:/Projects/Git_Hub/Data_Structures_Ass_3/MinHeap.h">
+			<Option target="DSA3"/>
+		</Unit>
 		<Unit filename="E:/Projects/Git_Hub/Data_Structures_Ass_3/Student.h">
 			<Option target="DSA3"/>
 		</Unit>

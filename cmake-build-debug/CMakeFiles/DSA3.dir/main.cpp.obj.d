@@ -298,4 +298,5 @@ CMakeFiles/DSA3.dir/main.cpp.obj: \
  E:\Projects\Git_Hub\Data_Structures_Ass_3\BST.h \
  E:\Projects\Git_Hub\Data_Structures_Ass_3\file.h \
  E:\Projects\Git_Hub\Data_Structures_Ass_3\Menus.h \
- E:\Projects\Git_Hub\Data_Structures_Ass_3\AVL.h
+ E:\Projects\Git_Hub\Data_Structures_Ass_3\AVL.h \
+ E:\Projects\Git_Hub\Data_Structures_Ass_3\MinHeap.h
