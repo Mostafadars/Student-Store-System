@@ -300,7 +300,8 @@ CMakeFiles/DSA3.dir/main.cpp.obj: ../main.cpp \
   ../BST.h \
   ../file.h \
   ../Menus.h \
-  ../AVL.h
+  ../AVL.h \
+  ../MinHeap.h
 
 
 E:/My_Faculty/CLion\ 2022.2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/vector:
@@ -902,3 +903,5 @@ E:/My_Faculty/CLion\ 2022.2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/includ
 ../BST.h:
 
 ../Menus.h:
+
+../MinHeap.h:
