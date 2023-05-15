@@ -1,3 +1,0 @@
-"E:\My_Faculty\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\DSA3.dir/objects.a
-"E:\My_Faculty\CLion 2022.2.3\bin\mingw\bin\ar.exe" qc CMakeFiles\DSA3.dir/objects.a @CMakeFiles\DSA3.dir\objects1.rsp
-"E:\My_Faculty\CLion 2022.2.3\bin\mingw\bin\g++.exe" -g -Wl,--whole-archive CMakeFiles\DSA3.dir/objects.a -Wl,--no-whole-archive -o DSA3.exe -Wl,--out-implib,libDSA3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\DSA3.dir\linklibs.rsp

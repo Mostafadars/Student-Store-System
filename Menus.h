@@ -6,6 +6,7 @@
 #include "BST.h"
 #include "AVL.h"
 #include "MinHeap.h"
+#include "MaxHeap.h"
 using namespace std;
 
 int getUserChoice(int minChoice, int maxChoice) {
@@ -157,63 +158,77 @@ void MinHeapMenu()
 
     int choice;
 
-    do {
-        cout << "##=============================================================================================##" << endl;
-        cout << "\t\t\tStudent Store App With BST\t\t\t" << endl;
-        cout << endl;
-        cout << "Choose one of the following options:" << endl;
-        cout << "1. Add student" << endl;
-        cout << "2. Remove student" << endl;
-        cout << "3. Search student" << endl;
-        cout << "4. Print All (sorted by id)" << endl;
-        cout << "5. Show Departments Report" << endl;
-        cout << "6. Return to main menu" << endl;
-        cout << "##=============================================================================================##" << endl;
-        choice = getUserChoice(1, 6);
+  do {
+    cout << "##=============================================================================================##" << endl;
+    cout << "\t\t\tStudent Store App With Min Binary Heap\t\t\t" << endl;
+    cout << endl;
+    cout << "Choose one of the following options:" << endl;
+    cout << "1. Add student" << endl;
+    cout << "2. Print All (sorted by GPA)" << endl;
+    cout << "3. Exit\n";
+    cout << "##=============================================================================================##" << endl;
+    choice = getUserChoice(1, 3);
 
-        if (choice == 1)
-        {
-            Student student(0, " ", 0.0, " ");
-            cout << "Enter Student Data As Follow : (ID) (Name) (GPA) (Department)" << endl;
-            cin >> student;
-            heap.addStudent(student);
-            cout << "Student Added Successfully !" << endl;
-        }
-        else if (choice == 2)
-        {
-            int id;
-            cout << "Enter Student ID That You Want to Remove It : " << endl;
-            cin >> id;
-            heap.removeStudent(id);
-            cout << "Student Removed Successfully !" << endl;
-        }
-        else if (choice == 3)
-        {
-            int id;
-            cout << "Enter Student ID That You Want to Search About It : " << endl;
-            cin >> id;
-            heap.searchStudent(id);
-        }
-        else if (choice == 4)
-        {
-            heap.printAll();
-        }
-        else if (choice == 5)
-        {
-            cout << "Departments Report : " << endl;
-            heap.printDepartmentReport();
-        }
-        else
-        {
-            cout << "Returning to main menu..." << endl;
-            break;
-        }
-    } while (choice != 6);
+    if (choice == 1)
+    {
+      Student student(0, " ", 0.0, " ");
+      cout << "Enter Student Data As Follow : (ID) (Name) (GPA) (Department)" << endl;
+      cin >> student;
+      heap.addStudent(student);
+      cout << "Student Added Successfully !" << endl;
+    }
+    else if (choice == 2)
+    {
+      heap.printAll();
+    }
+    else if (choice == 3)
+    {
+      break;
+    }
+  } while (true);
 }
 
 
 void MaxHeapMenu()
 {
+  vector<Student> students;
+  readStudentsDataFromFile("StudentsFile.txt", students);
+  MaxHeap heap;
+  for (int i = 0; i < students.size(); i++)
+  {
+    heap.addStudent(students[i]);
+  }
+
+  int choice;
+
+  do {
+    cout << "##=============================================================================================##" << endl;
+    cout << "\t\t\tStudent Store App With Max Binary Heap\t\t\t" << endl;
+    cout << endl;
+    cout << "Choose one of the following options:" << endl;
+    cout << "1. Add student" << endl;
+    cout << "2. Print All (sorted by GPA)" << endl;
+    cout << "3. Exit\n";
+    cout << "##=============================================================================================##" << endl;
+    choice = getUserChoice(1, 3);
+
+    if (choice == 1)
+    {
+      Student student(0, " ", 0.0, " ");
+      cout << "Enter Student Data As Follow : (ID) (Name) (GPA) (Department)" << endl;
+      cin >> student;
+      heap.addStudent(student);
+      cout << "Student Added Successfully !" << endl;
+    }
+    else if (choice == 2)
+    {
+      heap.printAll();
+    }
+    else if (choice == 3)
+    {
+      break;
+    }
+  } while (true);
 
 }
 

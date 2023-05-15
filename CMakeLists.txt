@@ -11,4 +11,5 @@ add_executable(DSA3
         BST.h
         Menus.h
         file.h AVL.h
-        MinHeap.h)
+        MinHeap.h
+        MaxHeap.h)

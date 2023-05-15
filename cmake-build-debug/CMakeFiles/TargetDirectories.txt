@@ -1,3 +1,3 @@
-E:/Projects/Git_Hub/Data_Structures_Ass_3/cmake-build-debug/CMakeFiles/DSA3.dir
-E:/Projects/Git_Hub/Data_Structures_Ass_3/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Projects/Git_Hub/Data_Structures_Ass_3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+E:/sec y sec sem/Data structure/assignments/Assignment 3/Data_Structures_Ass_3/cmake-build-debug/CMakeFiles/DSA3.dir
+E:/sec y sec sem/Data structure/assignments/Assignment 3/Data_Structures_Ass_3/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/sec y sec sem/Data structure/assignments/Assignment 3/Data_Structures_Ass_3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

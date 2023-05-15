@@ -47,10 +47,10 @@ private:
             smallestIndex = rightChildIndex;
         }
 
-        if (smallestIndex != index) {
-            swap(heap[index], heap[smallestIndex]);
-            heapifyDown(smallestIndex);
-        }
+//        if (smallestIndex != index) { // this condition is always false it must be deleted
+//            swap(heap[index], heap[smallestIndex]);
+//            heapifyDown(smallestIndex);
+//        }
     }
 
 public:
@@ -59,41 +59,41 @@ public:
         heapifyUp(heap.size() - 1);
     }
 
-    void removeStudent(int id) {
-        int index = -1;
-        for (int i = 0; i < heap.size(); i++) {
-            if (heap[i].getId() == id) {
-                index = i;
-                break;
-            }
-        }
+//    void removeStudent(int id) {
+//        int index = -1;
+//        for (int i = 0; i < heap.size(); i++) {
+//            if (heap[i].getId() == id) {
+//                index = i;
+//                break;
+//            }
+//        }
+//
+//        if (index == -1) {
+//            cout << "Student with ID " << id << " not found." << endl;
+//            return;
+//        }
+//
+//        swap(heap[index], heap[heap.size() - 1]);
+//        heap.pop_back();
+//
+//        if (index < heap.size()) {
+//            heapifyUp(index);
+//            heapifyDown(index);
+//        }
+//    }
 
-        if (index == -1) {
-            cout << "Student with ID " << id << " not found." << endl;
-            return;
-        }
-
-        swap(heap[index], heap[heap.size() - 1]);
-        heap.pop_back();
-
-        if (index < heap.size()) {
-            heapifyUp(index);
-            heapifyDown(index);
-        }
-    }
-
-    void searchStudent(int id)
-    {
-        for (int i = 0; i < heap.size(); i++)
-        {
-            if (heap[i].getId() == id)
-            {
-                cout << heap[i] << endl;
-                return;
-            }
-        }
-        cout << "Student Dose Not Exist!" << endl;
-    }
+//    void searchStudent(int id)
+//    {
+//        for (int i = 0; i < heap.size(); i++)
+//        {
+//            if (heap[i].getId() == id)
+//            {
+//                cout << heap[i] << endl;
+//                return;
+//            }
+//        }
+//        cout << "Student Dose Not Exist!" << endl;
+//    }
 
     void printAll()
     {
@@ -109,19 +109,19 @@ public:
         }
     }
 
-    void printDepartmentReport()
-    {
-        unordered_map<string, int> departmentCount;
-        for (Student student : heap)
-        {
-            departmentCount[student.getDepartment()]++;
-        }
-
-        for (const auto& entry : departmentCount)
-        {
-            cout << "Department: " << entry.first << ", Count: " << entry.second << endl;
-        }
-    }
+//    void printDepartmentReport()
+//    {
+//        unordered_map<string, int> departmentCount;
+//        for (Student student : heap)
+//        {
+//            departmentCount[student.getDepartment()]++;
+//        }
+//
+//        for (const auto& entry : departmentCount)
+//        {
+//            cout << "Department: " << entry.first << ", Count: " << entry.second << endl;
+//        }
+//    }
 };
 
 #endif //STUDENT_H_MINHEAP_H
